@@ -1,0 +1,14 @@
+
+<h1>ADD EMPLOYEE</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    NAME: <input type="text" name="NAME" required><br><br>
+    ROLE: <input type="text" name="ROLE" required><br><br>
+    SALARY: <input type="number" step="0.01" name="SALARY" required><br><br>
+    DATE OF JOIN: <input type="date" name="DATE_OF_JOIN" required><br><br>
+    BONUS: <input type="number" step="0.01" name="BONUS" value="0"><br><br>
+
+    <button type="submit">SAVE EMPLOYEE</button>
+</form>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<body>
+
+<h1>ALL EMPLOYEE DETAILS</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ROLE</th>
+        <th>SALARY</th>
+        <th>DATE OF JOIN</th>
+        <th>BONUS</th>
+    </tr>
+
+    {% for e in emp %}
+    <tr>
+        <td>{{ e.ID }}</td>
+        <td>{{ e.NAME }}</td>
+        <td>{{ e.ROLE }}</td>
+        <td>{{ e.SALARY }}</td>
+        <td>{{ e.DATE_OF_JOIN }}</td>
+        <td>{{ e.BONUS }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6">No Employee Records Found</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

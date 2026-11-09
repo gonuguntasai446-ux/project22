@@ -1,0 +1,37 @@
+
+<h1>EMPLOYEE MANAGEMENT SYSTEM</h1>
+
+<a href="{% url 'employee_add' %}">ADD EMPLOYEE</a>
+
+<form method="GET">
+    <input type="text" name="search" placeholder="Search Employee Name">
+    <button type="submit">SEARCH</button>
+</form>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ROLE</th>
+        <th>SALARY</th>
+        <th>DATE OF JOIN</th>
+        <th>BONUS</th>
+        <th>ACTION</th>
+    </tr>
+
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.ID }}</td>
+        <td>{{ emp.NAME }}</td>
+        <td>{{ emp.ROLE }}</td>
+        <td>{{ emp.SALARY }}</td>
+        <td>{{ emp.DATE_OF_JOIN }}</td>
+        <td>{{ emp.BONUS }}</td>
+        <td>
+            <a href="{% url 'employee_edit' emp.ID %}">EDIT</a>
+            |
+            <a href="{% url 'employee_delete' emp.ID %}">DELETE</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

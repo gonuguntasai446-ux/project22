@@ -1,0 +1,11 @@
+
+<h1>DELETE EMPLOYEE</h1>
+
+<p>Are you sure you want to delete {{ employee.NAME }}?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">YES, DELETE</button>
+</form>
+
+<a href="{% url 'employee_list' %}">CANCEL</a>

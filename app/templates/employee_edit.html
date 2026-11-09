@@ -1,0 +1,14 @@
+
+<h1>EDIT EMPLOYEE</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    NAME: <input type="text" name="NAME" value="{{ employee.NAME }}" required><br><br>
+    ROLE: <input type="text" name="ROLE" value="{{ employee.ROLE }}" required><br><br>
+    SALARY: <input type="number" step="0.01" name="SALARY" value="{{ employee.SALARY }}" required><br><br>
+    DATE OF JOIN: <input type="date" name="DATE_OF_JOIN" value="{{ employee.DATE_OF_JOIN|date:'Y-m-d' }}" required><br><br>
+    BONUS: <input type="number" step="0.01" name="BONUS" value="{{ employee.BONUS }}"><br><br>
+
+    <button type="submit">UPDATE EMPLOYEE</button>
+</form>
